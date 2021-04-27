@@ -21,11 +21,9 @@ public class MemberService {
 
     //회원 가입
     public Long join(Member member){
-        //같은 이름이 있는 중복 회원X
-        validateDuplicateMember(member);
-
-        memberRepository.save(member);
         return member.getId();
+        //시간측정은 핵심 비즈니스 로직(핵심 관심사항)이 아닌 공통 로직(공통 관심사항)이다!!
+
     }
 
     private void validateDuplicateMember(Member member) {
